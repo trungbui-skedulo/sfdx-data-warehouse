@@ -1,3 +1,3 @@
 const { retrieve, migrate } = require("./src/action");
 
-retrieve();
+migrate();

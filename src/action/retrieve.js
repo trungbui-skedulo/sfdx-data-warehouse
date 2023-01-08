@@ -20,7 +20,7 @@ const retrieve = async function () {
                 `data/retrieved/${schema.sobjectName}.json`,
                 JSON.stringify(records)
             );
-            console.log(`Store :===> ${schema.sobjectName}`);
+            console.log(`Store :===> ${records.length} ${schema.sobjectName}`);
         });
     });
 };

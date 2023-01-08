@@ -4,7 +4,10 @@ const Org = jsforce.Connection;
 Org.prototype.connect = function ({ username, password }) {
     return new Promise((res, rej) => {
         this.login(username, password, function (err, userInfo) {
-            if (err) rej(err);
+            if (err) {
+                rej(err);
+                return;
+            }
 
             res(userInfo);
         });
@@ -26,7 +29,24 @@ Org.prototype.fetchRecords = function (schema) {
             .on("error", function (err) {
                 rej(err);
             })
-            .run({ autoFetch: true, maxFetch: 5000 });
+            .run({ autoFetch: true, maxFetch: 50000 });
+    });
+};
+
+Org.prototype.createRecords = function (objectName, records) {
+    return new Promise((res, rej) => {
+        this.sobject(objectName).create(
+            records,
+            { allowRecursive: true },
+            function (err, rets) {
+                if (err) {
+                    rej(err);
+                    return;
+                }
+
+                res(rets);
+            }
+        );
     });
 };
 
