@@ -1,7 +1,7 @@
-require('dotenv').config()
+require("dotenv").config();
 
 module.exports = {
-    loginUrl: process.env.LOGIN_URL,
-    username: process.env.USERNAME,
-    password: process.env.PASSWORD,
-}
+    loginUrl: process.env.SF_LOGIN_URL,
+    username: process.env.SF_USERNAME,
+    password: process.env.SF_PASSWORD,
+};
