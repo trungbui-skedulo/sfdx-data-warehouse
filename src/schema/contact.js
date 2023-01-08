@@ -3,6 +3,7 @@ const { Schema } = require('../lib/schema')
 const contact = new Schema('Contact')
     .addField('Name')
     .addField('MobilePhone')
-    .addField('Email');
+    .addField('Email')
+    .addReferenceField('AccountId', 'Account');
 
 module.exports = contact;

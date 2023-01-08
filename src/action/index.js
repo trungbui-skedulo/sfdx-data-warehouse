@@ -1,3 +1,4 @@
 module.exports = {
-    retrieve: require('./retrieve')
+    retrieve: require('./retrieve'),
+    migrate: require('./migrate')
 }

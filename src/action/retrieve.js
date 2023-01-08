@@ -1,15 +1,16 @@
 const fs = require('fs/promises');
 const { Org } = require('../lib/org')
 const schema = require('../schema')
+const config = require('../lib/config')
 
 const retrieve = async function () {
     const org = new Org({
-        loginUrl: 'https://test.salesforce.com'
+        loginUrl: config.loginUrl
     })
 
     await org.connect({
-        username: 'expertservices@skedulo.com.ac.awahcp',
-        passworld: 'c6Gu4.dWYEDcN6jj44'
+        username: config.username,
+        passworld: config.password
     })
 
     Object.values(schema).forEach(schema => {
