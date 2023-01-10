@@ -1,4 +1,4 @@
--   Retrieve records
-    > npm run retrieve
--   Migrate records
-    > npm run migrate
+# Retrieve records
+> npm run retrieve
+# Migrate records
+> npm run migrate
